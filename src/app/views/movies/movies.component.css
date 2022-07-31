@@ -1,0 +1,23 @@
+/*--Filter category--*/
+select{
+    width: 250px;
+    margin-left: auto;
+}
+.settings{
+    display: flex;
+}
+/*---*/
+
+/*--cards--*/
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card:hover{
+    box-shadow: 5px 5px 5px grey, -5px -5px 10px grey;
+}
+.btnGroup  button{
+    width: 80px;
+}
+/*----*/

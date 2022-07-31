@@ -1,0 +1,30 @@
+<div class="container mt-3">
+    <h1>Regestration Form</h1>
+    <form #userForm="ngForm" (ngSubmit)="register(userForm.value)">
+        
+        <div class="mb-3">
+          <div *ngIf="name.invalid && name.touched">
+          <small *ngIf="name.errors?.['required']">*required</small>
+        </div>
+            <label for="name" class="form-label"> Name</label>
+            <input type="text" class="form-control" required #name="ngModel" id="name" name="name" ngModel>
+        </div>
+
+        <div class="mb-3">
+          <div *ngIf="email.invalid && email.touched">
+            <small *ngIf="email.errors?.['required']">*required</small>
+          </div>
+          <label for="email"  class="form-label">Email</label>
+          <input type="email" class="form-control" required #email="ngModel" id="email"  name="email" ngModel>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password<small>(at least 5 characters)</small></label>
+          <input type="password" class="form-control" id="password"  name="password" ngModel>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid" >register</button>
+      </form>
+      <hr>
+      <small>Already have an account?<a routerLink="/login">Log In</a></small>
+</div>

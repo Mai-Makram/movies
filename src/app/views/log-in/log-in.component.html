@@ -1,0 +1,21 @@
+<div class="container mt-3">
+  <h1>Login Form</h1>
+  <form #userForm="ngForm" (ngSubmit)="logIn(userForm.value)">
+    <!--for handling error message-->
+    <small *ngIf="invalidLogin">please check your email or password</small>
+    <!---->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email"  name="email" ngModel (focus)="(change())">
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password"  name="password" ngModel>
+      </div>
+      
+      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid" >log In</button>
+    </form>
+    <hr>
+    <small>Don't have an account?<a routerLink="/">register</a></small>
+</div>

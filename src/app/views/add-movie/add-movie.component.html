@@ -1,0 +1,26 @@
+<div class="container mt-3">
+  <h1>Add Movie</h1>
+  <form #userForm="ngForm" (ngSubmit)="addMovie()">
+      
+      <div class="mb-3">
+          <label for="name" class="form-label"> Name</label>
+          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" ngModel>
+      </div>
+      <div class="mb-3">
+          <label for="description" class="form-label"> Description</label>
+          <input type="text" class="form-control" id="description" name="description" [(ngModel)]="description" ngModel>
+      </div>
+
+      <div class="mb-3">
+        <label for="category_id" class="form-label">Category_id</label>
+        <input type="text" class="form-control" id="category_id" [(ngModel)]="category_id"  name="category_id" ngModel>
+      </div>
+
+      <div class="mb-3">
+        <label  class="form-label">Image</label>
+        <input type="file" class="form-control"   name="image" ngModel (change)="uploadFile($event)">
+      </div>
+      
+      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Add</button>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+
+<div class="settings mt-3">
+  <!--btn add-->
+  <button type="button" class="btn btn-primary" routerLink="/addMovie" >add movie</button>
+  <!---->
+
+  <!--Filter category-->
+  <select class="form-select" (change)="filterCategory($event)" >
+    <option selected>All</option>
+    <option value="{{category.id}}" *ngFor="let category of categories">{{category.id}}</option>
+  </select>
+  <!---->
+</div>
+
+<!--cards-->
+<div class="cards mt-3">
+  <div class="card m-3" style="width: 18rem;" *ngFor="let movie of movies">
+      <img src='https://test-api.storexweb.com/{{movie.image}}' class="card-img-top" alt="hg">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.name}}</h5>
+        <p class="card-text"> {{movie.description}} </p>
+        <div class="btnGroup">
+        <button type="button" class="btn btn-danger ms-3" (click)="deleteMovie(movie.id )">Delete</button>
+        <button type="button" class="btn btn-danger ms-5 " routerLink="/movie/{{movie.id}}" >Edit</button>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---->

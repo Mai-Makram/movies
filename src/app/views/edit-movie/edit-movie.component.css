@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img{
+    width: 400px;
+}
+form{
+    width: 600px;
+    margin: 20px;
+}
